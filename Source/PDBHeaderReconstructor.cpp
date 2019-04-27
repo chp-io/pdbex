@@ -411,7 +411,7 @@ PDBHeaderReconstructor::OnPaddingMember(
 
 		Write(
 			"%s %s%u",
-			PDB::GetBasicTypeString(PaddingBasicType, PaddingBasicTypeSize),
+			PDB::GetBasicTypeString(PaddingBasicType, PaddingBasicTypeSize, m_Settings->UseStdInt),
 			m_Settings->PaddingMemberPrefix.c_str(),
 			m_PaddingMemberCounter++
 			);
@@ -445,14 +445,14 @@ PDBHeaderReconstructor::OnPaddingBitFieldField(
 	{
 		Write(
 			"%s",
-			PDB::GetBasicTypeString(UdtField->Type) // TODO: UseStdInt
+			PDB::GetBasicTypeString(UdtField->Type, m_Settings->UseStdInt)
 		);
 	}
 	else
 	{
 		Write(
 			"%s %s%u",
-			PDB::GetBasicTypeString(UdtField->Type), // TODO: UseStdInt
+			PDB::GetBasicTypeString(UdtField->Type, m_Settings->UseStdInt),
 			m_Settings->PaddingMemberPrefix.c_str(),
 			m_PaddingMemberCounter++
 		);

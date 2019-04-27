@@ -48,6 +48,7 @@ class PDBHeaderReconstructor
 				MicrosoftTypedefs           = true;
 				AllowBitFieldsInUnion       = false;
 				AllowAnonymousDataTypes     = true;
+				UseStdInt                   = false;
 			}
 
 			MemberStructExpansionType MemberStructExpansion;
@@ -65,6 +66,7 @@ class PDBHeaderReconstructor
 			bool                      MicrosoftTypedefs       : 1;
 			bool                      AllowBitFieldsInUnion   : 1;
 			bool                      AllowAnonymousDataTypes : 1;
+			bool                      UseStdInt;
 		};
 
 		PDBHeaderReconstructor(

@@ -350,6 +350,7 @@ PDBExtractor::ParseParameters(
 
 			case 'i':
 				m_Settings.UdtFieldDefinitionSettings.UseStdInt = !OffSwitch;
+				m_Settings.PdbHeaderReconstructorSettings.UseStdInt = !OffSwitch;
 				break;
 
 			case 'j':
